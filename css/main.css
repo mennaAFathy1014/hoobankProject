@@ -1,0 +1,166 @@
+/* BreakPoints
+  --sm: 36rem;
+  576px
+  --md: 48rem;
+  768px
+  --lg: 62rem;
+  992px
+  --xl: 75rem;
+  1200px
+  --xxl: 87.5rem;
+  1400px
+ */
+
+:root {
+  --transition: all 0.2s linear;
+  /* color */
+  --main-color: #00f6ff;
+  --background: #00040f;
+  --white: #fff;
+  --main-paragraph: #b6b7ba;
+  --black: #000;
+  /*linear gradient colors*/
+  --liner-main-color: linear-gradient(
+    157.81deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+  --menu-linear: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    #14101d 95.11%
+  );
+  --active-liner: linear-gradient(
+    153.47deg,
+    rgba(255, 255, 255, 0) -341.94%,
+    #14101d 95.11%
+  );
+  /*font family*/
+  --main-font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--main-font-family);
+  background-color: var(--background);
+  color: var(--main-paragraph);
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-paragraph);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  padding: 1.25rem;
+  width: 85%;
+  margin: auto;
+}
+/*nav*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  display: flex;
+  gap: 0.5rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo span {
+  color: var(--white);
+}
+.logo span > span {
+  color: var(--main-color);
+}
+
+.active {
+  color: var(--white);
+}
+nav ul li a:hover {
+  color: var(--white);
+}
+.bars {
+  display: none;
+  width: 2.5rem;
+  gap: 0.2rem;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.bars span {
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--white);
+}
+.bars span:first-of-type {
+  width: 50%;
+}
+@media (max-width: 48rem) {
+  .bars {
+    display: flex;
+  }
+  .container {
+    width: 100%;
+  }
+  nav ul {
+    display: none;
+    width: 15rem;
+    flex-direction: column;
+    position: absolute;
+    background: var(--active-liner);
+    height: 100%;
+    padding: 1.25rem;
+    left: -100%;
+    top: 0;
+    transition: var(--transition);
+  }
+  .opened {
+    display: flex;
+    left: 0;
+  }
+}
+
+/*header content*/
+.header-content {
+  min-height: calc(100vh - 4.5rem);
+  background: url(../images/robotHand.png) no-repeat right;
+  background-size: contain;
+}
+.header-text {
+  width: 50rem;
+}
+.discount {
+  border-radius: 0.2rem;
+  width: 21rem;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  background: var(--active-liner);
+}
+
+h1 {
+  font-size: 5rem;
+  color: var(--white);
+}
+.main-linear {
+  background: var(--liner-main-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
